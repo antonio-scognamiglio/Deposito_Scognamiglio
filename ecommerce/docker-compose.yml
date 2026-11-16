@@ -1,0 +1,26 @@
+# Progetto: MySQL condiviso via Docker Compose (avvio con scripts/run.sh)
+name: java-spring-course
+
+services:
+  mysql-shared:
+    image: mysql:8.0
+    container_name: mysql-shared
+    ports:
+      - "3306:3306"   # l'app Spring Boot usa jdbc:mysql://localhost:3306/ecommercedb
+    environment:
+      MYSQL_ROOT_PASSWORD: segreta
+      MYSQL_DATABASE: ecommercedb
+    volumes:
+      # NAMED VOLUME (preferibile per la condivisione del progetto):
+      # un bind mount tipo /Users/<dev>/...:/var/lib/mysql NON è condivisibile,
+      # perché dipende da una cartella che deve esistere per forza sul proprio
+      # computer. Il named volume invece viene gestito da Docker su ogni
+      # macchina: portatile, sopravvive a "compose down" e basta clonare la repo.
+      - mysql-course-data:/var/lib/mysql
+    restart: always
+    # --lower-case-table-names=1 risolve la discrepanza di capitalizzazione
+    # tra macOS (case-insensitive) e il volume su base Linux.
+    command: ["--lower-case-table-names=1"]
+
+volumes:
+  mysql-course-data:
