@@ -20,4 +20,12 @@ Un commit per la parte boiler plate, di creazione
 
 Un commit per ogni fix per eventuali errori riscontrati, con il commit finale di fine test
 
+# Eventuali Dubbi
+
+- La fabbrica deve produrre necessariamente 100 al giorno? oppure può chiudere anche il day prima che si arrivi a 100?
+
+# Checkpoint
+
+Dove sono arrivato
+
 Aggiornamento alle 12.25
