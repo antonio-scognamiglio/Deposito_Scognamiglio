@@ -32,6 +32,9 @@ build/
 ### VS Code ###
 .vscode/
 
+### Explyt ###
+.explyt/
+
 ### Secrets ###
 .env
 
