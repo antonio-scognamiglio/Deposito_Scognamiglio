@@ -1,0 +1,30 @@
+# PostgreSQL + pgvector per il RAG (progetto orders)
+name: java-spring-course
+
+services:
+  postgres-rag:
+    build: .
+    container_name: postgres-rag
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: course-db
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: segreta
+    volumes:
+      - ./initdb:/docker-entrypoint-initdb.d
+      - postgres-rag-data:/var/lib/postgresql/data
+    restart: always
+
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-models:/root/.ollama/models
+    restart: always
+
+volumes:
+  postgres-rag-data:
+  ollama-models:
