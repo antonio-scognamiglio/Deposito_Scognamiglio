@@ -1,3 +1,5 @@
+package lunedi_16_11_26.models;
+
 public class Fabbrica {
     private int pieceAmount = 100;
     // Ogni giorno può produrre massimo 100 pezzi di cioccolato, io partirei con un
@@ -13,14 +15,16 @@ public class Fabbrica {
 
     // un metodo che preso in input la quantità di pezzi da produrre ed il tipo di
     // cioccolato calcola quanto deve scalare e se è possibile scala la quantita
-    public void produce(int quantity, ChocolateType type) {
-        int neededPieces = quantity * type.getCostoProduzione();
+    public void produce(int quantity, Cioccolato chocolate) {
+        int neededPieces = quantity * chocolate.chocolateValue.getCostoProduzione();
         if (neededPieces <= pieceAmount) {
             pieceAmount -= neededPieces;
-            System.out.println("Produzione di " + quantity + " pezzi di cioccolato " + type + " completata.");
+            System.out.println(
+                    "Produzione di " + quantity + " pezzi di cioccolato " + chocolate.chocolateValue + " completata.");
         } else {
-            System.out.println("Non è possibile produrre " + quantity + " pezzi di cioccolato " + type
-                    + ". Pezzi disponibili: " + pieceAmount);
+            System.out
+                    .println("Non è possibile produrre " + quantity + " pezzi di cioccolato " + chocolate.chocolateValue
+                            + ". Pezzi disponibili: " + pieceAmount);
         }
     }
 
