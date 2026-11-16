@@ -26,8 +26,10 @@ Un commit per ogni fix per eventuali errori riscontrati, con il commit finale di
 - C'è un problema il max 100 day va applicato alla fabbrica di cioccolato, non alle singole classi il valore è in comune, e il giorno corrente pure deve essere in comune partiremo da tempo 0
 - il tipo di cioccolato dovrebbe essere un enum, ma per velocità per ora è string
 
+# Da fixare
+
+Il costo della tavoletta varia in base alla dimensione, non può essere fisso
+
 # Checkpoint
 
 Dove sono arrivato
-
-Aggiornamento alle 12.25

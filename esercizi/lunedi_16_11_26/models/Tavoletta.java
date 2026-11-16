@@ -10,5 +10,4 @@ public class Tavoletta extends Cioccolato {
     // Proprietà aggiuntive come peso e se contiene o meno aggiunte
     private double weight;
     private String additions;
-
 }
