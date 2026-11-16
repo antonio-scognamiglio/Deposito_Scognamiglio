@@ -10,5 +10,4 @@ abstract class Cioccolato {
     void produce() {
         System.out.println("Producing " + chocolateType + " with " + cacaoPercentage + "% cacao.");
     }
-
 }
