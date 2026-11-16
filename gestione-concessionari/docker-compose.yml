@@ -1,0 +1,22 @@
+name: java-spring-course
+
+services:
+  mysql-shared:
+    image: mysql:8.0
+    container_name: mysql-shared
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: segreta
+      MYSQL_DATABASE: gestione_concessionari
+    volumes:
+      - mysql-course-data:/var/lib/mysql
+    restart: always
+    command: ["--lower-case-table-names=1"]
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping"]
+      interval: 10s
+      retries: 5
+
+volumes:
+  mysql-course-data:
