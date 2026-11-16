@@ -1,9 +1,8 @@
 package lunedi_16_11_26.models;
 
 public class Tavoletta extends Cioccolato {
-    public Tavoletta(ChocolateValue chocolateValue, double cacaoPercentage, String chocolateType, String additions,
-            double weight) {
-        super(chocolateValue, cacaoPercentage, chocolateType);
+    public Tavoletta(double cacaoPercentage, String chocolateType, String additions, double weight) {
+        super(ChocolateValue.TAVOLETTA, cacaoPercentage, chocolateType);
         this.weight = weight;
         this.additions = additions;
     }

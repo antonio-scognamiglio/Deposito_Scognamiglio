@@ -4,9 +4,8 @@ public class CioccolatoCaldo extends Cioccolato {
     double temperature;
     double density;
 
-    public CioccolatoCaldo(ChocolateValue chocolateValue, double cacaoPercentage, String chocolateType,
-            double temperature, double density) {
-        super(chocolateValue, cacaoPercentage, chocolateType);
+    public CioccolatoCaldo(double cacaoPercentage, String chocolateType, double temperature, double density) {
+        super(ChocolateValue.CIOCCOLATO_CALDO, cacaoPercentage, chocolateType);
         this.temperature = temperature;
         this.density = density;
     }

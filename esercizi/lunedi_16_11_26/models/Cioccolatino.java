@@ -4,9 +4,8 @@ public class Cioccolatino extends Cioccolato {
     String forma;
     String ripieno;
 
-    public Cioccolatino(String forma, String ripieno, ChocolateValue chocolateValue, double cacaoPercentage,
-            String chocolateType) {
-        super(chocolateValue, cacaoPercentage, chocolateType);
+    public Cioccolatino(String forma, String ripieno, double cacaoPercentage, String chocolateType) {
+        super(ChocolateValue.CIOCCOLATINO, cacaoPercentage, chocolateType);
         this.forma = forma;
         this.ripieno = ripieno;
     }
